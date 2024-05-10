@@ -1,8 +1,7 @@
 import { Block } from 'payload/types'
 
 export const Container_Scroll_Block: Block = {
-  slug: 'ContainerScroll',
-  interfaceName: 'ContainerScrollTypes',
+  slug: 'Container_Scroll',
   // imageURL: '',
   labels: {
     singular: 'Container Scroll Block',

@@ -3,7 +3,6 @@ import { Block } from 'payload/types'
 export const Cards_Block: Block = {
   slug: 'Cards',
   // imageURL: '',
-  interfaceName: 'CardsTypes',
   labels: {
     singular: 'Cards Block',
     plural: 'Cards Blocks',

@@ -3,14 +3,11 @@ import { Block } from 'payload/types'
 export const HeroParallax_Block: Block = {
   slug: 'HeroParallax',
   // imageURL: '',
-  interfaceName: 'HeroParallaxTypes',
   labels: {
-    singular: 'Hero Parallax Block',
-    plural: 'Hero Parallax Blocks',
+    singular: 'HeroParallax Block',
+    plural: 'HeroParallax Blocks',
   },
   fields: [
-    { name: 'hero_title', type: 'text', label: 'Hero Title' },
-    { name: 'hero_description', type: 'text', label: 'Hero Description' },
     {
       name: 'hero',
       type: 'array',

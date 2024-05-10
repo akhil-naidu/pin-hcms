@@ -1,12 +1,13 @@
 'use client'
 
-import { Media } from '@payload-types'
 import Image from 'next/image'
 
-import { ContainerScroll } from '@/blocks/Container_Scroll/container-scroll-animation'
-import { TextGenerateEffect } from '@/blocks/ui/text-generate-effect'
+import { ContainerScroll } from '@blocks/Container_Scroll/container-scroll-animation'
+import { TextGenerateEffect } from '@components/ui/text-generate-effect'
 
-export function Container(data: any) {
+export function Container_Scroll(data: any) {
+  const words = `Oxygen gets you high. In a catastrophic emergency, we're taking giant, panicked breaths. Suddenly you become euphoric, docile. You accept your fate. It's all right here. Emergency water landing, six hundred miles an hour. Blank faces, calm as Hindu cows
+`
   return (
     <div className='flex flex-col overflow-hidden'>
       <TextGenerateEffect words={data?.hero_data} />
@@ -22,7 +23,7 @@ export function Container(data: any) {
           </>
         }>
         <Image
-          src={(data?.image as Media)?.url || ''}
+          src={data?.image?.url || ''}
           alt='hero'
           height={720}
           width={1400}

@@ -1,17 +1,20 @@
 'use client'
 
-import { CardsTypes } from '@payload-types'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
 
-import { cn } from '@/utils/cn'
+import { cn } from '@blocks/components/cn'
 
 export const HoverEffect = ({
   items,
   className,
 }: {
-  items: CardsTypes
+  items: {
+    title: string
+    description: string
+    link: string
+  }[]
   className?: string
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
@@ -22,9 +25,9 @@ export const HoverEffect = ({
         'grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4',
         className,
       )}>
-      {items?.cards?.map((item, idx) => (
+      {items.map((item, idx) => (
         <Link
-          href={item?.link as string}
+          href={item?.link}
           key={item?.link}
           className='relative group  block p-2 h-full w-full'
           onMouseEnter={() => setHoveredIndex(idx)}

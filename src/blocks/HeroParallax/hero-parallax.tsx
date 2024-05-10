@@ -1,6 +1,5 @@
 'use client'
 
-import { HeroParallaxTypes } from '@payload-types'
 import {
   MotionValue,
   motion,
@@ -12,16 +11,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-import { TextGenerateEffect } from '@/blocks/ui/text-generate-effect'
-
-export const HeroParallaxUI = ({
-  products,
-}: {
-  products: HeroParallaxTypes
-}) => {
-  const firstRow = products?.hero?.slice(0, 5)
-  const secondRow = products?.hero?.slice(0, 5)
-  const thirdRow = products?.hero?.slice(0, 5)
+export const HeroParallaxUI = ({ products }: { products: any }) => {
+  const firstRow = products?.slice(0, 5)
+  const secondRow = products?.slice(0, 5)
+  const thirdRow = products?.slice(0, 5)
   const ref = React.useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -58,7 +51,7 @@ export const HeroParallaxUI = ({
     <div
       ref={ref}
       className='h-[300vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]'>
-      <Header data={products as HeroParallaxTypes} />
+      <Header />
       <motion.div
         style={{
           rotateX,
@@ -99,13 +92,18 @@ export const HeroParallaxUI = ({
   )
 }
 
-export const Header = ({ data }: { data: HeroParallaxTypes }) => {
+export const Header = (product: any) => {
   return (
     <div className='max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0'>
       <h1 className='text-2xl md:text-7xl font-bold dark:text-white'>
-        {data?.hero_title}
+        beautiful products <br />
+        latest technologies
       </h1>
-      <TextGenerateEffect words={data?.hero_description as string} />
+      <p className='max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200'>
+        We build beautiful products with the latest technologies and frameworks.
+        We are a team of passionate developers and designers that love to build
+        amazing products.
+      </p>
     </div>
   )
 }

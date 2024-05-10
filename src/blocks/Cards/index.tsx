@@ -1,13 +1,11 @@
 'use client'
 
-import { CardsTypes } from '@payload-types'
-
 import { HoverEffect } from './card-hover-effect'
 
-export function Cards(cards: CardsTypes) {
+export function Cards(cards: any) {
   return (
     <div className='w-full mx-auto px-8'>
-      <HoverEffect items={cards} />
+      <HoverEffect items={cards?.cards} />
     </div>
   )
 }
